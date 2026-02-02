@@ -84,6 +84,26 @@
       0% { transform: translateY(0); opacity: 1; }
       100% { transform: translateY(-100vh); opacity: 0; }
     }
+    /* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.4s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Typewriter effect */
+.typewriter {
+  white-space: pre-wrap; /* keeps line breaks */
+  overflow: hidden;
+}
+
   </style>
 </head>
 
@@ -133,7 +153,9 @@
   <!-- Love Letter -->
   <div class="section">
     <h2>💌 From My Heart</h2>
-    <div class="letter" style=color:black;>
+    <div class="letter fade-in">
+  <div id="typewriter" class="typewriter"></div>
+
       <!-- Paste the letter below -->
       Manika, <br><br>
       You are my safest place, my favorite smile, my biggest blessing.
@@ -149,23 +171,54 @@
     </div>
   </div>
 
-  <script>
-    function createHeart() {
-      const heart = document.createElement('div');
-      heart.className = 'heart';
-      heart.innerHTML = '❤️';
-      heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
-      document.body.appendChild(heart);
+ <script>
+  // Floating hearts
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.innerHTML = '❤️';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+  }
+  setInterval(createHeart, 250);
 
-      setTimeout(() => heart.remove(), 6000);
+  // Typewriter letter
+  const letterText = `Sahanya,
+
+You are my safest place, my favorite smile, my biggest blessing.
+Every moment with you feels special, even the silent ones.
+I don’t need the whole world — I just need you by my side.
+
+No matter where life takes us, my heart will always choose you.
+Thank you for loving me the way you do.
+
+I love you endlessly, my manikaahh 🥺❤‍🩹
+
+— Danuja`;
+
+  const el = document.getElementById("typewriter");
+  let i = 0;
+
+  function typeLetter() {
+    if (i < letterText.length) {
+      el.textContent += letterText.charAt(i);
+      i++;
+      setTimeout(typeLetter, 35); // typing speed (lower = faster)
     }
+  }
 
-    setInterval(createHeart, 250);
-  </script>
+  // Start typing after fade begins
+  window.addEventListener("load", () => {
+    setTimeout(typeLetter, 700);
+  });
+</script>
+
 
 </body>
 </html>
+
 
 
 
