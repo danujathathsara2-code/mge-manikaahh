@@ -104,6 +104,17 @@
   overflow: hidden;
 }
 
+    .counter {
+  font-size: 1.6rem;
+  background: rgba(255,255,255,0.15);
+  display: inline-block;
+  padding: 18px 30px;
+  border-radius: 20px;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+
   </style>
 </head>
 
@@ -149,6 +160,10 @@
       <img src="photos/img19.jpeg">
     </div>
   </div>
+<div class="section">
+  <h2>🕰️ Our Time Together</h2>
+  <div id="counter" class="counter"></div>
+</div>
 
   <!-- Love Letter -->
   <div class="section">
@@ -213,11 +228,32 @@ I love you endlessly, my manikaahh 🥺❤‍🩹
   window.addEventListener("load", () => {
     setTimeout(typeLetter, 700);
   });
+
+   // ❤️ Date Counter (Change this date)
+const startDate = new Date("2022-11-20T00:00:00"); // YYYY-MM-DD
+
+function updateCounter() {
+  const now = new Date();
+  const diff = now - startDate;
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  document.getElementById("counter").innerHTML =
+    `${days} days • ${hours} hours • ${minutes} minutes • ${seconds} seconds 💕`;
+}
+
+setInterval(updateCounter, 1000);
+updateCounter();
+
 </script>
 
 
 </body>
 </html>
+
 
 
 
