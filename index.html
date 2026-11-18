@@ -27,8 +27,8 @@
       </div>
       <div class="photo-collage" aria-label="A little scrapbook of us">
         <span class="scribble-heart" aria-hidden="true">♡</span>
-        <figure class="polaroid main-photo"><span class="tape" aria-hidden="true"></span><img src="photos/img1.jpeg" alt="Us smiling together, you in your red floral dress" fetchpriority="high" width="640" height="480"><figcaption>my favourite place is next to you.</figcaption></figure>
-        <figure class="polaroid small-photo"><img src="photos/img9.jpeg" alt="The two of us looking out at a waterfall" width="360" height="480"><figcaption>you + me, always ♡</figcaption></figure>
+        <figure class="polaroid main-photo"><span class="tape" aria-hidden="true"></span><img src="photos/6334628393244104746_121.jpg" alt="Danuu and Sahanya smiling together, in blue and yellow" fetchpriority="high" width="640" height="480"><figcaption>my favourite place is next to you.</figcaption></figure>
+        <figure class="polaroid small-photo"><img src="photos/6334628393244104741_121.jpg" alt="Our mirror photo, dressed up together" width="360" height="480"><figcaption>you + me, always ♡</figcaption></figure>
         <div class="anniversary-stamp" aria-label="Four years of us"><span>EST. 20 · 11 · 2022</span><strong>4</strong><span>YEARS OF US</span></div>
         <p class="collage-note handwritten">my person.<br>my home. <span aria-hidden="true">⤴</span></p>
       </div>
@@ -45,15 +45,29 @@
         <p class="together-note">Since our very first chapter: <strong id="together-days">—</strong> days of us <span>♡</span></p>
       </div>
     </section>
-    <section id="memories" class="memories-section wrap">
-      <div class="section-heading"><div><p class="eyebrow">02 / LITTLE MOMENTS, BIG FEELINGS</p><h2>If I could keep a feeling,<br><em>it would look like this.</em></h2></div><p>A few pieces of our world.<br>Tap a photo. Stay a little longer.</p></div>
-      <div class="memory-grid" id="memory-grid"></div>
-      <button class="text-button more-memories" id="more-memories" aria-expanded="false" aria-controls="extra-memories">There’s more of us <span>↓</span></button>
-      <div class="memory-grid extra-memories" id="extra-memories" hidden></div>
+    <section class="portrait-section" aria-labelledby="portrait-title">
+      <div class="wrap portrait-layout">
+        <div class="portrait-copy"><p class="eyebrow">A FRAME I’D KEEP FOREVER</p><h2 id="portrait-title">If forever had<br>a photograph,<br><em>it would be us.</em></h2><p>In a world that never stops moving,<br>you’re the moment I’d hold on to.</p><span class="handwritten">Danuu & Sahanya</span><span class="portrait-date">TWO HEARTS · ONE LITTLE WORLD</span></div>
+        <figure class="portrait-frame"><button id="open-portrait" aria-label="View our favourite portrait full size"><img src="photos/6334628393244104743_121.jpg" alt="Sahanya in a light-blue dress beside Danuu in a burgundy shirt, under warm garden lights" loading="lazy" width="960" height="1280"><span class="portrait-zoom" aria-hidden="true">↗</span></button><figcaption>all my favourite tomorrows have you in them. ♡</figcaption></figure>
+      </div>
     </section>
-    <section class="film-section wrap" aria-labelledby="film-title"><div class="film-image"><img src="photos/img19.jpeg" alt="A sunlit selfie of the two of us" loading="lazy" width="640" height="480"><button id="play-film" class="play-film" aria-label="Play our Valentine video memory"><span>▶</span></button><span class="film-tag">FROM OUR LITTLE ARCHIVE</span></div><div class="film-copy"><p class="eyebrow">A MEMORY IN MOTION</p><h2 id="film-title">Some feelings<br>deserve a <em>replay.</em></h2><p>A little piece of our Valentine’s story,<br>saved here for the next chapter.</p><button class="text-button" id="watch-film">Watch our video <span>↗</span></button></div></section>
+    <section id="memories" class="memories-section wrap">
+      <div class="section-heading"><div><p class="eyebrow">02 / LITTLE MOMENTS, BIG FEELINGS</p><h2>Our love,<br><em>one frame at a time.</em></h2></div><p>32 memories. One favourite person.<br>Swipe through our little world.</p></div>
+      <div id="slideshow" class="slideshow" role="region" aria-roledescription="carousel" aria-label="Our memories slideshow">
+        <div class="slide-topline"><span>THE D & S COLLECTION</span><span id="slide-count">01 / 32</span></div>
+        <div class="slide-stage" id="slide-stage">
+          <img class="slide-backdrop" id="slide-backdrop" src="photos/6334628393244104743_121.jpg" alt="" aria-hidden="true">
+          <button class="slide-open" id="open-slide" aria-label="Open current memory full size"><img id="slide-image" src="photos/6334628393244104743_121.jpg" alt="The two of us under warm garden lights" loading="lazy" width="960" height="1280"><span class="slide-expand" aria-hidden="true">VIEW FULL PHOTO ↗</span></button>
+        </div>
+        <div class="slide-controls"><div class="slide-caption"><span class="eyebrow" id="slide-chapter">OUR LITTLE WORLD</span><p id="slide-caption">A frame I’d keep forever.</p></div><div class="slide-buttons"><button id="slide-prev" aria-label="Previous memory">←</button><button id="slide-play" aria-label="Pause slideshow" aria-pressed="true">Ⅱ</button><button id="slide-next" aria-label="Next memory">→</button></div></div>
+        <div class="slide-progress" aria-hidden="true"><span id="slide-progress"></span></div>
+        <div id="slide-thumbnails" class="slide-thumbnails" role="group" aria-label="Choose one of our 32 memories"></div>
+        <p class="album-hint">A little pause. A little smile. Another memory with you. <span>♡</span></p>
+        <p id="slide-status" class="sr-only" role="status"></p>
+      </div>
+    </section>
     <section id="letter" class="letter-section"><div class="wrap letter-layout"><div class="letter-intro"><p class="eyebrow">03 / JUST BETWEEN YOU & ME</p><h2>One little letter.<br><em>All of my heart.</em></h2><p>For my Boleee. My safest place.<br>My favourite person, in every chapter.</p><p class="handwritten">This one’s only for you. ♡</p></div><button class="envelope" id="open-letter" aria-label="Open your anniversary love letter"><span class="envelope-top" aria-hidden="true"></span><span class="envelope-address">To my Manikaahh,<small>on our fourth anniversary</small></span><span class="wax-seal" aria-hidden="true">♡</span><span class="envelope-hint">OPEN WITH LOVE ↗</span></button></div></section>
-    <section class="closing wrap"><p class="eyebrow">FOUR YEARS DOWN. A LIFETIME TO GO.</p><h2>You. Me.<br><em>And all the days after.</em></h2><span class="closing-heart" aria-hidden="true">♡</span><p>Happy 4th anniversary, mage manikaahh.</p><span class="handwritten">Forever yours, Sudu Mahaththya</span></section>
+    <section class="closing wrap"><p class="eyebrow">FOUR YEARS DOWN. A LIFETIME TO GO.</p><h2>You. Me.<br><em>And all the days after.</em></h2><span class="closing-heart" aria-hidden="true">♡</span><p>Happy 4th anniversary, mage manikaahh.</p><span class="handwritten">Forever yours, Sudu Mahaththya</span><button id="celebrate-again" class="text-button">A little more celebration <span>✧</span></button></section>
   </main>
   <footer class="wrap"><span>20.11.2022 — forever</span><span>Made with love, by Danuu <span class="red">♡</span></span></footer>
   <audio id="bg-music" src="audio/back-music.mp3" loop preload="none"></audio>
@@ -61,7 +75,7 @@
   <p id="media-status" class="sr-only" role="status"></p>
   <dialog id="photo-dialog" class="photo-dialog" aria-label="Our photo memories"><button class="dialog-close" data-close aria-label="Close photo">×</button><img id="lightbox-image" alt=""><div class="lightbox-bottom"><button id="previous-photo" aria-label="Previous photo">←</button><p id="lightbox-caption"></p><button id="next-photo" aria-label="Next photo">→</button></div></dialog>
   <dialog id="letter-dialog" class="letter-dialog" aria-labelledby="letter-title"><button class="dialog-close" data-close aria-label="Close letter">×</button><p class="eyebrow">20 NOVEMBER 2026 · A LETTER FOR YOU</p><h2 id="letter-title">My Boleee, <span>♡</span></h2><div class="letter-body"><p>Four years of us. And somehow, my heart still finds new reasons to choose you.</p><p>You are my safest place, my favourite smile, my biggest blessing. Every moment with you feels special, even the silent ones. I don’t need the whole world — I just need you by my side.</p><p>Mage manikaahh, thank you for being you. For your love, your laughter, and for all the little things that mean more to me than I can ever put into words.</p><p>No matter where life takes us, my heart will always choose you. In the beautiful days and the difficult ones. In this chapter, and every chapter still to come.</p><p>Happy 4th anniversary, my love. Here’s to more memories, more adventures, and a lifetime of “us.”</p><p class="letter-last">I love you endlessly, mage manikaahh. ♡</p></div><p class="handwritten letter-signature">Forever yours,<br>Danuu</p><button id="send-love" class="button primary">Here’s to our forever <span>♡</span></button><p id="love-reply" role="status"></p></dialog>
-  <dialog id="video-dialog" class="video-dialog" aria-label="Our Valentine video memory"><button class="dialog-close" data-close aria-label="Close video">×</button><video id="memory-video" controls playsinline preload="none" poster="photos/img19.jpeg"><source src="valentine%20video.mp4" type="video/mp4">Your browser cannot play this video.</video><p>A little memory, a lot of love. ♡</p></dialog>
-  <noscript><p class="noscript">Our story is here, with love. Enable JavaScript to open the photo album, letter and video.</p></noscript>
+  <div id="celebration" class="celebration" hidden aria-hidden="true"><canvas id="celebration-canvas"></canvas><div class="celebration-note"><span>✧ &nbsp; OUR FOURTH CHAPTER &nbsp; ✧</span><strong>Danuu <i>♡</i> Sahanya</strong><p>Four years of choosing you.</p></div></div>
+  <noscript><p class="noscript">Our story is here, with love. Enable JavaScript to explore all 32 photos and open your letter.</p></noscript>
 </body>
 </html>
