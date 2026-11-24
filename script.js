@@ -159,7 +159,8 @@ document.querySelectorAll('dialog').forEach(dialog => {
 const letterDialog = document.getElementById('letter-dialog');
 document.getElementById('open-letter').addEventListener('click', () => { pauseSlides(); letterDialog.showModal(); });
 document.getElementById('send-love').addEventListener('click', event => {
-  document.getElementById('love-reply').textContent = 'Every lifetime. Every version of us. I’d choose you. ♡';
+  document.getElementById('love-reply').textContent = 'Oyage hithata denena de mata watinawa. Mama ahagena innam, mage sudu manika. ♡';
+  event.currentTarget.disabled = true;
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const bounds = event.currentTarget.getBoundingClientRect();
   for (let i = 0; i < 20; i++) {
@@ -232,4 +233,31 @@ function celebrate() {
 document.getElementById('celebrate-again').addEventListener('click', celebrate);
 document.addEventListener('visibilitychange', () => { if (document.hidden) stopCelebration(); });
 window.addEventListener('pagehide', stopCelebration);
-celebrate();
+// A deliberate welcome: music stays off until she chooses to play it.
+const welcomeNote = document.getElementById('welcome-note');
+const unwrapNote = document.getElementById('unwrap-note');
+const skipWelcome = document.getElementById('skip-welcome');
+let openingNote = false;
+function enterOurPage(withSurprise) {
+  if (openingNote) return;
+  openingNote = true;
+  unwrapNote.disabled = true;
+  skipWelcome.disabled = true;
+  welcomeNote.classList.add('is-opening');
+  const finish = () => {
+    welcomeNote.hidden = true;
+    document.body.classList.remove('welcome-pending');
+    document.getElementById('hero-title').focus({preventScroll: true});
+    window.scrollTo({top: 0, behavior: 'instant'});
+    if (withSurprise) celebrate();
+    scheduleSlide();
+  };
+  if (reducedMotion.matches || !withSurprise) finish();
+  else setTimeout(finish, 650);
+}
+unwrapNote.addEventListener('click', () => enterOurPage(true));
+skipWelcome.addEventListener('click', () => enterOurPage(false));
+if (!location.hash) {
+  welcomeNote.hidden = false;
+  document.body.classList.add('welcome-pending');
+}
